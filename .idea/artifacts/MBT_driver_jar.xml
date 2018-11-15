@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MBT-driver:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MBT_driver_jar</output-path>
+    <root id="archive" name="MBT-driver.jar">
+      <element id="module-output" name="MBT-driver" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/jcraft/jsch/0.1.51/jsch-0.1.51.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/jcabi/jcabi-ssh/1.5.1/jcabi-ssh-1.5.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/jcabi/jcabi-aspects/0.22/jcabi-aspects-0.22.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.4/commons-io-2.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/jcabi/jcabi-log/0.16/jcabi-log-0.16.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/aspectj/aspectjrt/1.8.4/aspectjrt-1.8.4.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Maven: com.jcabi:jcabi-aspects:0.22" />
+      <element id="library" level="project" name="Maven: com.jcabi:jcabi-log:0.16" />
+      <element id="library" level="project" name="Maven: com.jcabi:jcabi-ssh:1.5.1" />
+      <element id="library" level="project" name="Maven: com.jcraft:jsch:0.1.51" />
+      <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
+      <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
+      <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.4" />
+      <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.4" />
+      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.5" />
+    </root>
+  </artifact>
+</component>
