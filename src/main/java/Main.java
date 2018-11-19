@@ -89,7 +89,7 @@ public class Main {
 
     private void processAsEqualInputs(String val1, String val2) throws InterruptedException, IOException {
         writeConcurrently(val1, val2);
-        Thread.sleep(10000);
+        Thread.sleep(20000);
 
         createResponse("eq", "");
 
@@ -101,10 +101,10 @@ public class Main {
 
     private void processAsDifferentInputs(String val1, String val2) throws InterruptedException, IOException {
         writeConcurrently(val1, val2);
-        Thread.sleep(10000);
+        Thread.sleep(20000);
 
         String val = readFile();
-        if (val.equals("a@content")) {
+        if (val.equals(val1)) {
             createResponse("read2", val);
         } else {
             createResponse("read1", val);
@@ -122,8 +122,8 @@ public class Main {
         Shell.Plain plain1 = new Shell.Plain(shellVM1);
         Shell.Plain plain2 = new Shell.Plain(shellVM2);
 
-        MyThread t1 = new MyThread(plain1, "echo -n '" + val1 + "' > Dropbox/test1.txt");
-        MyThread t2 = new MyThread(plain2, "echo -n '" + val2 + "' > Dropbox/test1.txt");
+        MyThread t1 = new MyThread(plain1, "echo -n '" + val1 + "' > Dropbox/SharedFolder/test1.txt");
+        MyThread t2 = new MyThread(plain2, "echo -n '" + val2 + "' > Dropbox/SharedFolder/test1.txt");
 
         t1.start();
         t2.start();
@@ -131,21 +131,21 @@ public class Main {
 
     private String readFile() throws IOException {
         Shell.Plain plainObs = new Shell.Plain(shellVMOBS);
-        return plainObs.exec("cat Dropbox/test1.txt");
+        return plainObs.exec("cat Dropbox/SharedFolder/test1.txt");
     }
 
     private String readConflictFile() throws IOException {
         Shell.Plain plainObs = new Shell.Plain(shellVMOBS);
 
         String fileName = getConflictFileName();
-        return plainObs.exec("cat Dropbox/" + fileName);
+        return plainObs.exec("cat Dropbox/SharedFolder/" + fileName);
     }
 
     private boolean conflictFileExists() throws IOException {
         Shell.Plain plainObs = new Shell.Plain(shellVMOBS);
 
         String fileName = getConflictFileName();
-        return plainObs.exec("[ -f Dropbox/" + fileName + " ] && echo \"exists\"").equals("exists\n");
+        return plainObs.exec("[ -f Dropbox/SharedFolder/" + fileName + " ] && echo \"exists\"").equals("exists\n");
     }
 
     private String getConflictFileName() {
@@ -157,7 +157,7 @@ public class Main {
         Shell.Plain plainObs = new Shell.Plain(shellVMOBS);
 
         String fileName = getConflictFileName();
-        plainObs.exec("rm Dropbox/" + fileName);
+        plainObs.exec("rm Dropbox/SharedFolder/" + fileName);
     }
 
     class MyThread extends Thread {
